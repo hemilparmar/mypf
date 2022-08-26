@@ -13,13 +13,13 @@ const path = require("path");
 const router = express.Router();
 
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname + "/index.html"));
+  res.sendFile(path.join("index.html"));
 });
 app.get("/aboutme", function (req, res) {
-  res.sendFile(path.join(__dirname + "/about.html"));
+  res.sendFile(path.join("about.html"));
 });
 app.get("/contactme", function (req, res) {
-  res.sendFile(path.join(__dirname + "/contact.html"));
+  res.sendFile(path.join("contact.html"));
 });
 
 app.post("/", (req, res) => {
@@ -70,7 +70,7 @@ app.post("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-const port = 3000;
+const port = process.emv.PORT;
 
 app.listen(port, () => {
   console.log(`Server running on port${port}`);
