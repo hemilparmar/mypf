@@ -8,18 +8,18 @@ const app = express();
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use('/images', express.static(__dirname + '/images'));
 const path = require("path");
 const router = express.Router();
 
 app.get("/", function (req, res) {
-  res.sendFile(path.join("index.html"));
+  res.sendFile(path.join(__dirname+"/public/index.html"));
 });
 app.get("/aboutme", function (req, res) {
-  res.sendFile(path.join("about.html"));
+  res.sendFile(path.join(__dirname+"/public/about.html"));
 });
 app.get("/contactme", function (req, res) {
-  res.sendFile(path.join("contact.html"));
+  res.sendFile(path.join(__dirname+"/public/contact.html"));
 });
 
 app.post("/", (req, res) => {
@@ -70,15 +70,10 @@ app.post("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-const port = process.emv.PORT;
+const port = process.env.PORT;
 
 app.listen(port, () => {
   console.log(`Server running on port${port}`);
 });
 
 // console.log(process.env.EMAIL);
-// 322815258003-73kcvvp03c25nh36ec5hjvp9eht4585c.apps.googleusercontent.com
-// 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
-
-// ucqgquiqwxhogdvt
-// ucqgquiqwxhogdvt
