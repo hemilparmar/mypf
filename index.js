@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/images', express.static(__dirname + '/images'));
+
 const path = require("path");
 const router = express.Router();
 
